@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.menu li a {
+  background-color: transparent !important;
+}
+
+.dropdown-content li {
+  background-color: transparent !important;
+}
+
+
+.swiper-pagination {
+  z-index: 10;
+  position: relative;
+}
+
