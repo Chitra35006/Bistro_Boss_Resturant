@@ -7,10 +7,17 @@ import slide1 from "../../../assets/home/slide1.jpg";
 import slide2 from "../../../assets/home/slide2.jpg";
 import slide3 from "../../../assets/home/slide3.jpg";
 import slide4 from "../../../assets/home/slide4.jpg";
+import Section_Title from "../Section_Title/Section_Title";
 
 const Category = () => {
   return (
-    <Swiper
+    <section>
+      <Section_Title
+      subHeading={"From 11:00am to 10:00pm"}
+      heading={"Order Online"}
+      >
+      </Section_Title>
+      <Swiper
       direction="horizontal"  // Horizontal scrolling (default)
       slidesPerView={3}       // Show one slide at a time
       spaceBetween={30}
@@ -61,6 +68,7 @@ const Category = () => {
       `}
       </style> 
     </Swiper>
+    </section>
   );
 };
 
