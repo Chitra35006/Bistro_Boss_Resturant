@@ -2,7 +2,7 @@
 
 const MenuItem = ({item}) => {
     const {name, image, price, recipe} = item;
-    console.log(item);
+    //console.log(item);
     return (
         <div className="flex space-x-4 p-2 border border-gray-200">
         {/* Image with custom border-radius */}

@@ -1,5 +1,5 @@
 import React from "react";
-import bgImg from "../../assets/shop/banner2.jpg";
+import bgImg from "../../assets/order/banner2.jpg";
 
 const BistroBox = () => {
   return (
