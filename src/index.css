@@ -17,3 +17,8 @@
   position: relative;
 }
 
+.swiper-pagination-bullet-active {
+  background-color: #ff7f50; /* Light orange */
+  transform: scale(1.2); /* Slightly enlarge active bullet */
+  font-weight: bold;
+}

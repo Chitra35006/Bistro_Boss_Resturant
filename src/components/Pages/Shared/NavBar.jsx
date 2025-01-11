@@ -3,11 +3,10 @@ import { NavLink } from "react-router-dom";
 const NavBar = () => {
     const navOptions = <>
         <li className="bg-transparent hover:bg-red-700 transition duration-300"><NavLink to="/" className="bg-transparent">HOME</NavLink></li>
-        <li className="bg-transparent hover:bg-red-700 transition duration-300"><NavLink className="bg-transparent">CONTACT US</NavLink></li>
-        <li className="bg-transparent hover:bg-red-700 transition duration-300"><NavLink className="bg-transparent">DASHBOARD</NavLink></li>
         <li className="bg-transparent hover:bg-red-700 transition duration-300"><NavLink to='/menu' className="bg-transparent">OUR MENU</NavLink></li>
         <li className="bg-transparent hover:bg-red-700 transition duration-300"><NavLink to='/orderFood/salad' className="bg-transparent">Order</NavLink></li>
         <li className="bg-transparent hover:bg-red-700 transition duration-300"><NavLink className="bg-transparent">OUR SHOP</NavLink></li>
+        <li className="bg-transparent hover:bg-red-700 transition duration-300"><NavLink to='/login' className="bg-transparent">Login</NavLink></li>
      </>
   return (
     <>
