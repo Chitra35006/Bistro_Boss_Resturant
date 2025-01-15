@@ -1,13 +1,45 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const NavBar = () => {
-    const navOptions = <>
-        <li className="bg-transparent hover:bg-red-700 transition duration-300"><NavLink to="/" className="bg-transparent">HOME</NavLink></li>
-        <li className="bg-transparent hover:bg-red-700 transition duration-300"><NavLink to='/menu' className="bg-transparent">OUR MENU</NavLink></li>
-        <li className="bg-transparent hover:bg-red-700 transition duration-300"><NavLink to='/orderFood/salad' className="bg-transparent">Order</NavLink></li>
-        <li className="bg-transparent hover:bg-red-700 transition duration-300"><NavLink className="bg-transparent">OUR SHOP</NavLink></li>
-        <li className="bg-transparent hover:bg-red-700 transition duration-300"><NavLink to='/login' className="bg-transparent">Login</NavLink></li>
-     </>
+   const {user,logOut} = useContext(AuthContext);
+
+   const handleLogOut = () => {
+    logOut()
+        .then(() => { })
+        .catch(error => console.log(error));
+}
+
+    const navOptions = 
+    <>
+    <li className="bg-transparent hover:bg-red-700 transition duration-300">
+      <NavLink to="/" className="bg-transparent">HOME</NavLink>
+    </li>
+    <li className="bg-transparent hover:bg-red-700 transition duration-300">
+      <NavLink to="/menu" className="bg-transparent">OUR MENU</NavLink>
+    </li>
+    <li className="bg-transparent hover:bg-red-700 transition duration-300">
+      <NavLink to="/orderFood/salad" className="bg-transparent">Order</NavLink>
+    </li>
+    <li className="bg-transparent hover:bg-red-700 transition duration-300">
+      <NavLink to="/secret" className="bg-transparent">Secret</NavLink>
+    </li>
+    <li className="bg-transparent hover:bg-red-700 transition duration-300">
+      <NavLink to="/shop" className="bg-transparent">OUR SHOP</NavLink>
+    </li>
+    {user ? (
+      <>
+        {/* Uncomment the next line to display the user's name */}
+        <span>{user?.displayName}</span>
+        <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
+      </>
+    ) : (
+      <li className="bg-transparent hover:bg-red-700 transition duration-300">
+        <NavLink to="/login" className="bg-transparent">Login</NavLink>
+      </li>
+    )}
+  </>
   return (
     <>
       <div className="max-w-screen-xl mx-auto navbar fixed z-10 bg-opacity-30 bg-black text-white">
