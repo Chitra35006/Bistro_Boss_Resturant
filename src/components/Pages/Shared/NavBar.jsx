@@ -3,9 +3,11 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { FaShoppingCart } from 'react-icons/fa';
 import useCart from "../../../hooks/useCart";
+import useAdmin from "../../../hooks/useAdmin";
 
 const NavBar = () => {
    const {user,logOut} = useContext(AuthContext);
+   const[isAdmin] = useAdmin();
 
    const [cart] = useCart();
 
@@ -29,9 +31,16 @@ const NavBar = () => {
     <li className="bg-transparent hover:bg-red-700 transition duration-300">
       <NavLink to="/secret" className="bg-transparent">Secret</NavLink>
     </li>
-    <li className="bg-transparent hover:bg-red-700 transition duration-300">
-      <NavLink to="/shop" className="bg-transparent">OUR SHOP</NavLink>
-    </li>
+    {
+            // user ? 'true': 'false'
+            // user ? condition ? 'double true' : 'one true' : 'false' 
+        }
+        {
+            user && isAdmin && <li><Link to="/dashboard/adminHome">Dashboard</Link></li>
+        }
+        {
+            user && !isAdmin && <li><Link to="/dashboard/userHome">Dashboard</Link></li>
+        }
     <li>
             <Link to="/dashboard/cart">
                 <button className="btn">
